@@ -1,0 +1,100 @@
+stress_tables:
+  urban_suburban: "BicycleLTS/data/scores/sub _urban_lts.csv"
+  rural: "BicycleLTS/data/scores/rural_bike_lts.csv"
+
+segment:
+    lanes:
+      name: 'lanes'
+      assumptions:
+        - where: "fclass IN ('primary','secondary')"
+          val: 2
+        - where: "fclass IN ('tertiary')"
+          val: 1
+        - where: "fclass IN ('unclassified','residential','living_street')"
+          val: 0
+        - else: 1
+    oneway:
+      name: "oneway"
+      assumptions:
+        - where: "fclass IN ('motorway','motorway_link')"
+          val: TRUE
+        - else:
+          val: FALSE
+    aadt:
+      name: 'aadt'
+      assumptions:
+        - where: "fclass IN ('primary','secondary')"
+          val: 20000
+        - where: "fclass = 'tertiary'"
+          val: 10000
+        - where: "fclass IN ('unclassified','residential')"
+          val: 500
+        - where: "fclass = 'living_street'"
+          val: 100
+        - else:
+          val: 20000
+    centerline:
+      name: "centerline"
+      assumptions:
+        - where: "fclass IN ('unclassified','residential','living_street')"
+          val: FALSE
+        - else:
+          val: TRUE
+    speed:
+      name: 'maxspeed'
+      assumptions:
+        - where: "fclass IN ('primary','secondary')"
+          val: 40
+        - where: "fclass = 'tertiary'"
+          val: 30
+        - where: "fclass IN ('unclassified','residential')"
+          val: 25
+        - where: "fclass = 'living_street'"
+          val: 20
+        - else:
+          val: 30
+    parking:
+      name: "parking"
+      assumptions:
+        - where: "*"
+          val: TRUE
+        - else:
+          val: TRUE
+    low_parking:
+      name: "low_parking"
+      assumptions:
+        - where: "fclass IN ('primary','secondary')"
+          val: FALSE
+        - where: "fclass = 'tertiary'"
+          val: FALSE
+        - else:
+          val: FALSE
+    parking_width:
+      name: "p_width"
+      assumptions:
+        - where: "*"
+          val: 8
+        - else:
+          val: 8
+    width:
+      name: 'width'
+      assuptions:
+        - where: "*"
+          val: 50
+        - else:
+          val: 50
+    bike_lane_width:
+      name: 'bike_l_width'
+      assumptions:
+        - where: "*"
+          val: 5
+        - else:
+          val: 5
+    bike_infra:
+      name: "bike_fac"
+      vals:
+        lane: "lane"
+        buffered_lane: "buffered_lane"
+        track: "track"
+        path: "path"
+

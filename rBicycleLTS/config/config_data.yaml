@@ -1,0 +1,50 @@
+
+lanes:
+  datatype: ['integer', 'double']
+  default_datatype: 'integer'
+
+oneway:
+  datatype: ['character', 'logical']
+  indication: [['yes', 'Yes'], TRUE]
+  default_datatype: 'character'
+
+aadt:
+  datatype: ['integer', 'double']
+  default_datatype: 'integer'
+
+centerline:
+  datatype: ['character', 'logical']
+  indication: [['yes', 'Yes'], TRUE]
+  default_datatype: 'character'
+
+speed:
+  datatype: ['integer', 'double']
+  default_datatype: 'integer'
+
+parking:
+  datatype: ['character', 'logical']
+  indication: [['yes', 'Yes'], TRUE]
+  default_datatype: 'character'
+
+low_parking:
+  datatype: ['character', 'logical']
+  indication: [['yes', 'Yes'], TRUE]
+  default_datatype: 'character'
+
+parking_width:
+  datatype: ['integer', 'double']
+  default_datatype: 'double'
+
+width:
+  datatype: ['integer', 'double']
+  default_datatype: 'double'
+
+bike_lane_width:
+  datatype: ['integer', 'double']
+  default_datatype: 'double'
+
+bike_infra:
+  datatype: 'character'
+  default_datatype: 'character'
+
+
