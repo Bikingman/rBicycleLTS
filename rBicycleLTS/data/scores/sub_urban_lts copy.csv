@@ -1,0 +1,105 @@
+lower_speed, upper_speed,centerline,lower_lanes,upper_lanes,bike_lane,lower_bl_width,upper_bl_width,parking,freq_bl_blockage,lower_adt,upper_adt,func_class,BLTS
+0,25,Yes,2,2,'Yes',15,999,'Yes',NA,,NA,NA,1
+0,25,Yes,2,2,'Yes',14,14.5,'Yes',NA,,NA,NA,2
+0,25,Yes,2,2,'Yes',0,13,'Yes',NA,,NA,NA,3
+0,25,Yes,4,999,'Yes',15,999,'Yes',NA,,NA,NA,2
+0,25,Yes,4,999,'Yes',0,14.5,'Yes',NA,,NA,NA,3
+30,30,Yes,2,2,'Yes',15,999,'Yes',NA,,NA,NA,1
+30,30,Yes,2,2,'Yes',14,14.5,'Yes',NA,,NA,NA,2
+30,30,Yes,2,2,'Yes',0,13,'Yes',NA,,NA,NA,3
+30,30,Yes,4,999,'Yes',15,999,'Yes',NA,,NA,NA,2
+30,30,Yes,4,999,'Yes',0,14.5,'Yes',NA,,NA,NA,3
+35,35,Yes,2,2,'Yes',15,999,'Yes',NA,,NA,NA,2
+35,35,Yes,2,2,'Yes',14,14.5,'Yes',NA,,NA,NA,3
+35,35,Yes,2,2,'Yes',0,13,'Yes',NA,,NA,NA,3
+35,35,Yes,4,999,'Yes',15,999,'Yes',NA,,NA,NA,3
+35,35,Yes,4,999,'Yes',0,14.5,'Yes',NA,,NA,NA,3
+40,999,Yes,2,2,'Yes',15,999,'Yes',NA,,NA,NA,2
+40,999,Yes,2,2,'Yes',14,14.5,'Yes',NA,,NA,NA,4
+40,999,Yes,2,2,'Yes',0,13,'Yes',NA,,NA,NA,4
+40,999,Yes,4,999,'Yes',15,999,'Yes',NA,,NA,NA,3
+40,999,Yes,4,999,'Yes',0,14.5,'Yes',NA,,NA,NA,4
+0,30,Yes,2,2,'Yes',7,999,'No','No',,NA,NA,1
+0,30,Yes,2,2,'Yes',5.5,6.5,'No','No',,NA,NA,1
+0,30,Yes,2,2,'Yes',0,5,'No','No',,NA,NA,2
+0,30,Yes,2,2,'Yes',0,999,'No','Yes',,NA,NA,3
+0,30,Yes,4,999,'Yes',7,999,'No','No',,NA,NA,1
+0,30,Yes,4,999,'Yes',0,6.5,'No','No',,NA,NA,3
+35,35,Yes,2,2,'Yes',7,999,'No','No',,NA,NA,2
+35,35,Yes,2,2,'Yes',5.5,6.5,'No','No',,NA,NA,3
+35,35,Yes,2,2,'Yes',0,5,'No','No',,NA,NA,3
+35,35,Yes,2,2,'Yes',0,999,'No','Yes',,NA,NA,3
+35,35,Yes,4,999,'Yes',7,999,'No','No',,NA,NA,2
+35,35,Yes,4,999,'Yes',0,6.5,'No','No',,NA,NA,4
+40,999,Yes,2,2,'Yes',7,999,'No','No',,NA,NA,3
+40,999,Yes,2,2,'Yes',5.5,6.5,'No','No',,NA,NA,4
+40,999,Yes,2,2,'Yes',0,5,'No','No',,NA,NA,4
+40,999,Yes,2,2,'Yes',0,999,'No','Yes',,NA,NA,4
+40,999,Yes,4,999,'Yes',7,999,'No','No',,NA,NA,3
+40,999,Yes,4,999,'Yes',0,6.5,'No','No',,NA,NA,4
+0,20,No,0,999,'No',NA,NA,NA,NA,0,750,"residential, living street",1
+25,25,No,0,999,'No',NA,NA,NA,NA,0,750,"residential, living street",1
+30,30,No,0,999,'No',NA,NA,NA,NA,0,750,"residential, living street",2
+0,20,No,0,999,'No',NA,NA,NA,NA,751,1500,"residential, living street, collector",1
+25,25,No,0,999,'No',NA,NA,NA,NA,751,1500,"residential, living street, collector",1
+30,30,No,0,999,'No',NA,NA,NA,NA,751,1500,"residential, living street, collector",2
+0,20,No,0,999,'No',NA,NA,NA,NA,1501,3000,"collector, secondary, tertiary, trunk",2
+25,25,No,0,999,'No',NA,NA,NA,NA,1501,3000,"collector, secondary, tertiary, trunk",2
+30,30,No,0,999,'No',NA,NA,NA,NA,1501,3000,"collector, secondary, tertiary, trunk",2
+0,20,No,0,999,'No',NA,NA,NA,NA,3001,999999,"primary, secondary, tertiary, trunk",2
+25,25,No,0,999,'No',NA,NA,NA,NA,3001,999999,"primary, secondary, tertiary, trunk",3
+30,30,No,0,999,'No',NA,NA,NA,NA,3001,999999,"primary, secondary, tertiary, trunk",3
+0,20,Yes,2,2,'No',NA,NA,NA,NA,0,750,"residential, living street",1
+25,25,Yes,2,2,'No',NA,NA,NA,NA,0,750,"residential, living street",1
+30,30,Yes,2,2,'No',NA,NA,NA,NA,0,750,"residential, living street",2
+0,20,Yes,2,2,'No',NA,NA,NA,NA,751,1500,"residential, living street, collector",2
+25,25,Yes,2,2,'No',NA,NA,NA,NA,751,1500,"residential, living street, collector",2
+30,30,Yes,2,2,'No',NA,NA,NA,NA,751,1500,"residential, living street, collector",2
+0,20,Yes,2,2,'No',NA,NA,NA,NA,1501,3000,"collector, secondary, tertiary, trunk",2
+25,25,Yes,2,2,'No',NA,NA,NA,NA,1501,3000,"collector, secondary, tertiary, trunk",3
+30,30,Yes,2,2,'No',NA,NA,NA,NA,1501,3000,"collector, secondary, tertiary, trunk",3
+0,20,Yes,2,2,'No',NA,NA,NA,NA,3001,999999,"primary, secondary, tertiary, trunk",3
+25,25,Yes,2,2,'No',NA,NA,NA,NA,3001,999999,"primary, secondary, tertiary, trunk",3
+30,30,Yes,2,2,'No',NA,NA,NA,NA,3001,999999,"primary, secondary, tertiary, trunk",3
+0,20,Yes,4,4,'No',NA,NA,NA,NA,0,8000,"primary, secondary, tertiary, trunk",3
+25,25,Yes,4,4,'No',NA,NA,NA,NA,0,8000,"primary, secondary, tertiary, trunk",3
+30,30,Yes,4,4,'No',NA,NA,NA,NA,0,8000,"primary, secondary, tertiary, trunk",3
+0,20,Yes,4,4,'No',NA,NA,NA,NA,8001,999999,"primary, secondary, tertiary, trunk",3
+25,25,Yes,4,4,'No',NA,NA,NA,NA,8001,999999,"primary, secondary, tertiary, trunk",3
+30,30,Yes,4,4,'No',NA,NA,NA,NA,8001,999999,"primary, secondary, tertiary, trunk",4
+0,20,Yes,3,3,'No',NA,NA,NA,NA,0,999999,"primary, secondary, tertiary, trunk",3
+25,25,Yes,3,3,'No',NA,NA,NA,NA,0,999999,"primary, secondary, tertiary, trunk",3
+30,30,Yes,3,3,'No',NA,NA,NA,NA,0,999999,"primary, secondary, tertiary, trunk",4
+35,35,No,0,999,'No',NA,NA,NA,NA,0,750,"residential, living street",2
+40,40,No,0,999,'No',NA,NA,NA,NA,0,750,"residential, living street",3
+45,999,No,0,999,'No',NA,NA,NA,NA,0,750,"residential, living street",3
+35,35,No,0,999,'No',NA,NA,NA,NA,751,1500,"residential, living street, collector",3
+40,40,No,0,999,'No',NA,NA,NA,NA,751,1500,"residential, living street, collector",3
+45,999,No,0,999,'No',NA,NA,NA,NA,751,1500,"residential, living street, collector",4
+35,35,No,0,999,'No',NA,NA,NA,NA,1501,3000,"collector, secondary, tertiary, trunk",3
+40,40,No,0,999,'No',NA,NA,NA,NA,1501,3000,"collector, secondary, tertiary, trunk",4
+45,999,No,0,999,'No',NA,NA,NA,NA,1501,3000,"collector, secondary, tertiary, trunk",4
+35,35,No,0,999,'No',NA,NA,NA,NA,3001,999999,"primary, secondary, tertiary, trunk",3
+40,40,No,0,999,'No',NA,NA,NA,NA,3001,999999,"primary, secondary, tertiary, trunk",4
+45,999,No,0,999,'No',NA,NA,NA,NA,3001,999999,"primary, secondary, tertiary, trunk",4
+35,35,Yes,2,2,'No',NA,NA,NA,NA,0,750,"residential, living street",2
+40,40,Yes,2,2,'No',NA,NA,NA,NA,0,750,"residential, living street",3
+45,999,Yes,2,2,'No',NA,NA,NA,NA,0,750,"residential, living street",3
+35,35,Yes,2,2,'No',NA,NA,NA,NA,751,1500,"residential, living street, collector",3
+40,40,Yes,2,2,'No',NA,NA,NA,NA,751,1500,"residential, living street, collector",3
+45,999,Yes,2,2,'No',NA,NA,NA,NA,751,1500,"residential, living street, collector",4
+35,35,Yes,2,2,'No',NA,NA,NA,NA,1501,3000,"collector, secondary, tertiary, trunk",3
+40,40,Yes,2,2,'No',NA,NA,NA,NA,1501,3000,"collector, secondary, tertiary, trunk",4
+45,999,Yes,2,2,'No',NA,NA,NA,NA,1501,3000,"collector, secondary, tertiary, trunk",4
+35,35,Yes,2,2,'No',NA,NA,NA,NA,3001,999999,"primary, secondary, tertiary, trunk",3
+40,40,Yes,2,2,'No',NA,NA,NA,NA,3001,999999,"primary, secondary, tertiary, trunk",4
+45,999,Yes,2,2,'No',NA,NA,NA,NA,3001,999999,"primary, secondary, tertiary, trunk",4
+35,35,Yes,4,4,'No',NA,NA,NA,NA,0,8000,"primary, secondary, tertiary, trunk",3
+40,40,Yes,4,4,'No',NA,NA,NA,NA,0,8000,"primary, secondary, tertiary, trunk",4
+45,999,Yes,4,4,'No',NA,NA,NA,NA,0,8000,"primary, secondary, tertiary, trunk",4
+35,35,Yes,4,4,'No',NA,NA,NA,NA,8001,999999,"primary, secondary, tertiary, trunk",4
+40,40,Yes,4,4,'No',NA,NA,NA,NA,8001,999999,"primary, secondary, tertiary, trunk",4
+45,999,Yes,4,4,'No',NA,NA,NA,NA,8001,999999,"primary, secondary, tertiary, trunk",4
+35,35,Yes,3,3,'No',NA,NA,NA,NA,0,999999,"primary, secondary, tertiary, trunk",4
+40,40,Yes,3,3,'No',NA,NA,NA,NA,0,999999,"primary, secondary, tertiary, trunk",4
+45,999,Yes,3,3,'No',NA,NA,NA,NA,0,999999,"primary, secondary, tertiary, trunk",4

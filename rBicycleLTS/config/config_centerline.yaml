@@ -3,91 +3,108 @@ stress_tables:
   rural: "BicycleLTS/data/scores/rural_bike_lts.csv"
 
 segment:
-    lanes:
-      name: 'lanes'
-      assumptions:
-        - where: "fclass %in% c('primary','secondary')"
-          val: 2
-        - where: "fclass %in% c('tertiary')"
-          val: 1
-        - where: "fclass %in% c('unclassified','residential','living_street')"
-          val: 0
-        - else: 1
     oneway:
       name: "oneway"
       assumptions:
-        - where: "fclass %in% c('motorway','motorway_link')"
-          val: TRUE
-        - else: FALSE
+        - where: "df$fclass %in% c('motorway','motorway_link')"
+          val: 'Yes'
+        - else: 
+          val: 'No'
+    lanes:
+      name: 'lanes'
+      assumptions:
+        - where: "df$fclass %in% c('residential', 'living_street') & df$oneway %in% c('Yes', 'yes')"
+          val: 1
+        - where: "df$fclass %in% c('primary','primary_link','secondary','secondary_link')"
+          val: 4
+        - where: "df$fclass %in% c('tertiary', 'tertiary_link')"
+          val: 2
+        - where: "df$fclass %in% c('residential','living_street')"
+          val: 2
+        - where: "df$fclass == 'cycleway'"
+          val: 1
+        - else: 
+          val: 2
+
     aadt:
       name: 'aadt'
       assumptions:
-        - where: "fclass %in% c('primary','secondary')"
-          val: 20000
-        - where: "fclass = 'tertiary'"
-          val: 10000
-        - where: "fclass%in% c('unclassified','residential')"
+        - where: "df$fclass %in% c('motorway','motorway_link')"
+          val: 16000
+        - where: "df$fclass %in% c('primary','primary_link','secondary','secondary_link')"
+          val: 16000
+        - where: "df$fclass %in% c('tertiary', 'tertiary_link', 'collector')"
+          val: 8000
+        - where: "df$fclass %in% c('residential')"
           val: 500
-        - where: "fclass = 'living_street'"
+        - where: "df$fclass == 'living_street'"
           val: 100
-        - else: 20000
+        - where: "df$fclass == 'cycleway'"
+          val: 0
+        - else: 
+          val: 8000
     centerline:
       name: "centerline"
       assumptions:
-        - where: "fclass %in% c('unclassified','residential','living_street')"
-          val: FALSE
+        - where: "df$fclass %in% c('unclassified','residential','living_street')"
+          val: 'No'
+        - where: "df$lanes == 1"
+          val: 'No'
+        - where: "df$fclass == 'cycleway'"
+          val: 'No'
         - else:
-          val: TRUE
+          val: 'Yes'
     speed:
       name: 'maxspeed'
       assumptions:
-        - where: "fclass %in% c('primary','secondary')"
+        - where: "df$fclass %in% c('primary','primary_link','secondary','secondary_link')"
           val: 40
-        - where: "fclass = 'tertiary'"
+        - where: "df$fclass %in% c('tertiary', 'tertiary_link')"
           val: 30
-        - where: "fclass %in% c('unclassified','residential')"
+        - where: "df$fclass %in% c('unclassified','residential')"
           val: 25
-        - where: "fclass = 'living_street'"
+        - where: "df$fclass == 'living_street'"
           val: 20
-        - else: 30
+        - where: "df$fclass == 'cycleway'"
+          val: 10
+        - else: 
+          val: 30
     parking:
       name: "parking"
       assumptions:
-        - where: "."
-          val: TRUE
-        - else: TRUE
+        - else: 
+          val: 'Yes'
     low_parking:
       name: "low_parking"
       assumptions:
-        - where: "fclass %in% c('primary','secondary')"
-          val: FALSE
-        - where: "fclass = 'tertiary'"
-          val: FALSE
-        - else: FALSE
+        - where: "df$fclass %in% c('primary','primary_link','secondary','secondary_link')"
+          val: 'No'
+        - where: "df$fclass %in% c('tertiary', 'tertiary_link')"
+          val: 'No'
+        - else: 
+          val: 'No'
     parking_width:
       name: "p_width"
       assumptions:
-        - where: "."
+        - else: 
           val: 8
-        - else: 8
     width:
       name: 'width'
-      assuptions:
-        - where: "."
-          val: 50
-        - else: 50
+      assumptions:
+        - else: 
+          val: 50.
     bike_lane_width:
       name: 'bike_l_width'
       assumptions:
-        - where: "."
+        - where: "df$fclass == 'cycleway'"
           val: 5
         - else:
-          val: 5
+          val: 0
     bike_infra:
-      name: "bike_fac"
+      name: "fclass"
       vals:
-        lane: "lane"
-        buffered_lane: "buffered_lane"
-        track: "track"
-        path: "path"
+        bike_lane: "lane"
+        buffered_bl: "buffered_lane"
+        protected_bl: 'protected'
+        shared_use_path: "cycleway"
 

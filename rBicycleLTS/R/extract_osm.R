@@ -12,9 +12,11 @@
 #   Install Package:           "Cmd + Shift + B"
 #   Check Package:             "Cmd + Shift + E"
 #   Test Package:              "Cmd + Shift + T"
+
 library(dplyr)
 library(sf)
 library(yaml)
+library(fuzzyjoin)
 
 extract_highways <- function(path, list_of_highways=NA){
   if (is.na(list_of_highways)){
@@ -22,22 +24,9 @@ extract_highways <- function(path, list_of_highways=NA){
   }
   osmextract::oe_vectortranslate(path)
   df = sf::st_read(".//data//district-of-columbia-latest.gpkg")
-  print(head(df))
-  print(names(df))
   df <- df %>% filter(df$highway %in% list_of_highways)
   return(df)
 }
-
-path <- paste0(getwd(), "/rBicycleLTS/data//washington_dc/washington_dc_ways.shp")
-yaml_centerline_path <- paste0(getwd(), "/rBicycleLTS/config/config_centerline.yaml")
-yaml_lane_path <- paste0(getwd(), "/rBicycleLTS/config/config_forward_backwards.yaml")
-yaml_config_type <- paste0(getwd(), "/rBicycleLTS/config/config_data.yaml")
-
-
-
-config <- read_yaml(yaml_centerline_path)
-config_lanes <- read_yaml(yaml_lane_path)
-config_types <- read_yaml(yaml_config_type)
 
 column_exists <- function(table, column) {
   if (names(table) %in% column) {
@@ -59,10 +48,6 @@ create_key_value <- function(keys, values) {
   }
 }
 
-roads <- sf::read_sf(path)
-
-View(head(df, 10000))
-
 get_class <- function(column){
   path <- paste0(getwd(), "/rBicycleLTS/config/config_data.yaml")
   return(read_yaml(path)[[column]]$datatype)
@@ -83,8 +68,6 @@ add_default_columns <- function(df, config) {
   return(df)
 }
 
-roads1 <- add_default_columns(roads, config)
-
 assign_classes <- function(df, config) {
   for (i in seq_len(length(config$segment))) {
     name <- config$segment[[i]]$name
@@ -101,38 +84,113 @@ assign_classes <- function(df, config) {
   return(df)
 }
 
-roads1 <- assign_classes(roads1, config)
-str(roads1)
-
 define_assumptions <- function(df, config) {
   for (i in seq_len(length(config$segment) - 1)) {
     name <- config$segment[[i]]$name
-    for (i in seq_len(length(config$segment[[i]]$name))) {
-      if ("assumptions" %in% names(config$segment[[i]])) {
-        for (j in seq_len(length(config$segment[[i]]$assumptions) - 1)) {
-          condition <- config$segment[[i]]$assumptions[j][[1]]$where
-          val <- config$segment[[i]]$assumptions[j][[1]]$val
-            browser()
-          df <- df %>% mutate(!!as.name(name), ifelse(is.na(!!as.name(name)) & parse(text = condition), val, !!as.name(name)))
-
-
-df %>% mutate({{ name }}, ifelse(is.na({{ name }}), {{ val }}, {{ name }}))
-
-        }
-      }
-      }
-    }
+    if ("assumptions" %in% names(config$segment[[i]])) {
+        for (j in seq_len(length(config$segment[[i]]$assumptions))) {
+            val <- config$segment[[i]]$assumptions[j][[1]]$val
+            if (!(j == length(config$segment[[i]]$assumptions))) {
+                condition <- config$segment[[i]]$assumptions[j][[1]]$where
+                df[[name]] <- ifelse(is.na(df[[name]]) & 
+                                     eval(parse(text = condition)), 
+                                     val, 
+                                     df[[name]]
+                                     )
+            } else {
+                df[[name]] <- ifelse(is.na(df[[name]]), val, df[[name]])
+            }}}}
     return(df)
   }
 
-
-test2 <- define_assumptions(roads1, config)
-View(head(test2, 100))
-assign_blts <- function(roads, config) {
-
-  # first create new columns where missing
-  roads <- add_default_columns(roads, config)
-  roads <- assign_classes(roads, config)
-  roads <- 1
-
+convert_title <- function(df){
+    for (i in seq_len(length(names(df)))){
+        name <- names(df)[i]
+        if (class(df[[name]])[1] == "character") {
+            yeses <- c("yes", "YES", "YEs", "YeS", "yES")
+            df[[name]] <- ifelse(df[[name]] %in% yeses, "Yes", df[[name]])
+            df[[name]] <- ifelse(df[[name]] %in% c("no", "nO", "NO"),
+                                 "No", df[[name]])
+        }
+    }
+    return(df)
 }
+
+detect <- function(x, y){ 
+  mapply(function(x, y) any(x == y), strsplit(x, ', '), strsplit(y, ', '))
+}
+
+fix_speed <- function(roads, maxspeedlimit_col) {
+    roads[[maxspeedlimit_col]] <- 5*(roads[[maxspeedlimit_col]]%/%5 + as.logical(roads[[maxspeedlimit_col]]%%5))
+    return(roads)
+}
+
+perform_lanes_check <- function(df, lanes, centerline){
+    if( any(df[[lanes]] < 2 & df[[centerline]] == 'Yes')){
+        print('There are segments with ceterlines and only one lane of traffic')
+    } else {
+        print('Checked for: Centerline Presents and Only One Lane of Traffic')
+        print('No Issues Found')
+    }
+}
+
+get_names <- function(config){
+    collection <- c()
+    for (i in seq_len(length(config$segment))){
+        assign(config$segment[1]$name <- config$segment[1]$name)
+        collection <- append(collection, get(config$segment[1]$name))
+    }
+    return(collection)
+}
+
+score_blts_or <- function(df, config, id, area_type='urban', rural_urban_col=NA, geometry='geometry') {
+
+    nms <- get_names(config)
+    blts_no_bike_lane <- scores_sub_urb %>% filter(bike_lane == 'No')
+    blts_bike_lane <- scores_sub_urb %>% filter(bike_lane == 'Yes')
+
+    print('')
+    df1 <- fuzzy_left_join(df, blts_no_bike_lane,
+            by = c( fclass = "func_class",
+                    maxspeed = "lower_speed",
+                    maxspeed = "upper_speed",
+                    lanes = "lower_lanes",
+                    lanes = "upper_lanes",
+                    centerline = "centerline",
+                    aadt = "lower_adt",
+                    aadt = "upper_adt"
+            ),
+            match_fun = list( detect, `>=`, `<=`,  `>=`, `<=`,  `==`, `>=`, `<=` )
+            )
+
+    if (
+
+    )
+
+
+    return(df1)
+}
+
+path <- paste0(getwd(), "/rBicycleLTS/data//washington_dc/washington_dc_ways.shp")
+yaml_centerline_path <- paste0(getwd(), "/rBicycleLTS/config/config_centerline.yaml")
+yaml_lane_path <- paste0(getwd(), "/rBicycleLTS/config/config_forward_backwards.yaml")
+yaml_config_type <- paste0(getwd(), "/rBicycleLTS/config/config_data.yaml")
+csv_scores_rural <- paste0(getwd(), "/rBicycleLTS/data/scores/rural_bike_lts.csv")
+csv_scores_sub_urb <- paste0(getwd(), "/rBicycleLTS/data/scores/sub_urban_lts.csv")
+
+config <- read_yaml(yaml_centerline_path)
+config_lanes <- read_yaml(yaml_lane_path)
+config_types <- read_yaml(yaml_config_type)
+scores_rural <- read.csv(csv_scores_rural, sep=',', header=T)
+scores_sub_urb <- read.csv(csv_scores_sub_urb, sep=',', header=T)
+
+roads <- sf::read_sf(path)
+roads1 <- add_default_columns(roads, config)
+roads2 <- assign_classes(roads1, config)
+roads3 <- define_assumptions(roads2, config)
+#roads2$lanes <- ifelse(roads2$lanes < 2 & roads2$centerline == 'Yes', 2, roads2$lanes)
+roads4 <- convert_title(roads3)
+roads5 <- fix_speed(roads4, 'maxspeed')
+roads <- score_blts_or(roads5, scores_sub_urb, 'id')
+
+st_write(roads, 'test21.shp', 'test21', delete_dsn=T)
