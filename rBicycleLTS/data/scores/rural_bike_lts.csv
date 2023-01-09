@@ -1,4 +1,4 @@
-lower_speed,upper_speed,lower_adt,upper_adt,lower_shoulder,upper_shoulder,BLTS
+lower_speed,upper_speed,lower_adt,upper_adt,lower_shoulder,upper_shoulder,blts_score
 45,999,0,400,0,3,2
 45,999,0,400,4,6,2
 45,999,0,400,6,999,2

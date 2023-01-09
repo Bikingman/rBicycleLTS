@@ -101,10 +101,10 @@ segment:
         - else:
           val: 0
     bike_infra:
-      name: "fclass"
+      name: "bike_fac"
       vals:
-        bike_lane: "lane"
-        buffered_bl: "buffered_lane"
-        protected_bl: 'protected'
-        shared_use_path: "cycleway"
+        bike_lane: "Bike Lane"
+        buffered_bl: "Buffered Bike Lane"
+        protected_bl: 'Protected Bike Lane'
+        shared_use_path: "Shared Use Path"
 

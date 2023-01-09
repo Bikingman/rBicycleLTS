@@ -136,20 +136,23 @@ perform_lanes_check <- function(df, lanes, centerline){
 
 get_names <- function(config){
     collection <- c()
-    for (i in seq_len(length(config$segment))){
-        assign(config$segment[1]$name <- config$segment[1]$name)
-        collection <- append(collection, get(config$segment[1]$name))
-    }
+
     return(collection)
 }
 
 score_blts_or <- function(df, config, id, area_type='urban', rural_urban_col=NA, geometry='geometry') {
 
-    nms <- get_names(config)
+    for (i in seq_len(length(config$segment))){
+        assign(config$segment[i]$name <- config$segment[i]$name)
+    }
+
+    for (i in seq_len(length(config$segment$bike_infra$vals))){
+        assign(names(config$segment$bike_infra$vals[i]) <- config$segment$bike_infra$vals[i])
+    }
+    
     blts_no_bike_lane <- scores_sub_urb %>% filter(bike_lane == 'No')
     blts_bike_lane <- scores_sub_urb %>% filter(bike_lane == 'Yes')
 
-    print('')
     df1 <- fuzzy_left_join(df, blts_no_bike_lane,
             by = c( fclass = "func_class",
                     maxspeed = "lower_speed",
@@ -163,13 +166,13 @@ score_blts_or <- function(df, config, id, area_type='urban', rural_urban_col=NA,
             match_fun = list( detect, `>=`, `<=`,  `>=`, `<=`,  `==`, `>=`, `<=` )
             )
 
-    if (
-
-    )
-
-
-    return(df1)
-}
+    df1$blts_score <- ifelse(
+      df[[bike_infra]] %in% c(protected_bl, shared_use_path), 1, df1$blts_score 
+      ) 
+    df1$blts_score <- ifelse(
+      df[[fclass]] %in% c('motorway', 'motorway_link'), 4, df1$blts_score 
+      ) 
+ 
 
 path <- paste0(getwd(), "/rBicycleLTS/data//washington_dc/washington_dc_ways.shp")
 yaml_centerline_path <- paste0(getwd(), "/rBicycleLTS/config/config_centerline.yaml")

@@ -1,4 +1,4 @@
-lower_speed, upper_speed,centerline,lower_lanes,upper_lanes,bike_lane,lower_bl_width,upper_bl_width,parking,freq_bl_blockage,lower_adt,upper_adt,func_class,BLTS
+lower_speed, upper_speed,centerline,lower_lanes,upper_lanes,bike_lane,lower_bl_width,upper_bl_width,parking,freq_bl_blockage,lower_adt,upper_adt,func_class,blts_score
 0,25,Yes,2,2,Yes,15,999,Yes,NA,,NA,NA,1
 0,25,Yes,2,2,Yes,14,14.5,Yes,NA,,NA,NA,2
 0,25,Yes,2,2,Yes,0,13,Yes,NA,,NA,NA,3
