@@ -101,7 +101,7 @@ segment:
         - else:
           val: 0
     bike_infra:
-      name: "bike_fac"
+      name: "min_bk_inf"
       vals:
         bike_lane: "Bike Lane"
         buffered_bl: "Buffered Bike Lane"
