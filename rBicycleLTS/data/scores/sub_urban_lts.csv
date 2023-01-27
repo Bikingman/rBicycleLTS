@@ -1,105 +1,104 @@
-lower_speed, upper_speed,centerline,lower_lanes,upper_lanes,bike_lane,lower_bl_width,upper_bl_width,parking,freq_bl_blockage,lower_adt,upper_adt,func_class,blts_score
-0,25,Yes,2,2,Yes,15,999,Yes,,,,,1
-0,25,Yes,2,2,Yes,14,14.5,Yes,,,,,2
-0,25,Yes,2,2,Yes,0,13,Yes,,,,,3
-0,25,Yes,4,999,Yes,15,999,Yes,,,,,2
-0,25,Yes,4,999,Yes,0,14.5,Yes,,,,,3
-30,30,Yes,2,2,Yes,15,999,Yes,,,,,1
-30,30,Yes,2,2,Yes,14,14.5,Yes,,,,,2
-30,30,Yes,2,2,Yes,0,13,Yes,,,,,3
-30,30,Yes,4,999,Yes,15,999,Yes,,,,,2
-30,30,Yes,4,999,Yes,0,14.5,Yes,,,,,3
-35,35,Yes,2,2,Yes,15,999,Yes,,,,,2
-35,35,Yes,2,2,Yes,14,14.5,Yes,,,,,3
-35,35,Yes,2,2,Yes,0,13,Yes,,,,,3
-35,35,Yes,4,999,Yes,15,999,Yes,,,,,3
-35,35,Yes,4,999,Yes,0,14.5,Yes,,,,,3
-40,999,Yes,2,2,Yes,15,999,Yes,,,,,2
-40,999,Yes,2,2,Yes,14,14.5,Yes,,,,,4
-40,999,Yes,2,2,Yes,0,13,Yes,,,,,4
-40,999,Yes,4,999,Yes,15,999,Yes,,,,,3
-40,999,Yes,4,999,Yes,0,14.5,Yes,,,,,4
-0,30,Yes,2,2,Yes,7,999,No,No,,,,1
-0,30,Yes,2,2,Yes,5.5,6.5,No,No,,,,1
-0,30,Yes,2,2,Yes,0,5,No,No,,,,2
-0,30,Yes,2,2,Yes,0,999,No,Yes,,,,3
-0,30,Yes,4,999,Yes,7,999,No,No,,,,1
-0,30,Yes,4,999,Yes,0,6.5,No,No,,,,3
-35,35,Yes,2,2,Yes,7,999,No,No,,,,2
-35,35,Yes,2,2,Yes,5.5,6.5,No,No,,,,3
-35,35,Yes,2,2,Yes,0,5,No,No,,,,3
-35,35,Yes,2,2,Yes,0,999,No,Yes,,,,3
-35,35,Yes,4,999,Yes,7,999,No,No,,,,2
-35,35,Yes,4,999,Yes,0,6.5,No,No,,,,4
-40,999,Yes,2,2,Yes,7,999,No,No,,,,3
-40,999,Yes,2,2,Yes,5.5,6.5,No,No,,,,4
-40,999,Yes,2,2,Yes,0,5,No,No,,,,4
-40,999,Yes,2,2,Yes,0,999,No,Yes,,,,4
-40,999,Yes,4,999,Yes,7,999,No,No,,,,3
-40,999,Yes,4,999,Yes,0,6.5,No,No,,,,4
-0,20,No,0,999,No,,,,,0,750,"residential, living_street",1
-25,25,No,0,999,No,,,,,0,750,"residential, living_street",1
-30,30,No,0,999,No,,,,,0,750,"residential, living_street",2
-0,20,No,0,999,No,,,,,751,1500,"residential, living_street, collector",1
-25,25,No,0,999,No,,,,,751,1500,"residential, living_street, collector",1
-30,30,No,0,999,No,,,,,751,1500,"residential, living_street, collector",2
-0,20,No,0,999,No,,,,,1501,3000,"collector, secondary, secondary_link, tertiary, tertiary_link, trunk, trunk_link",2
-25,25,No,0,999,No,,,,,1501,3000,"collector, secondary, secondary_link, tertiary, tertiary_link, trunk, trunk_link",2
-30,30,No,0,999,No,,,,,1501,3000,"collector, secondary, secondary_link, tertiary, tertiary_link, trunk, trunk_link",2
-0,20,No,0,999,No,,,,,3001,999999,"primary, primary_link, secondary, secondary_link, tertiary, tertiary_link, trunk, trunk_link",2
-25,25,No,0,999,No,,,,,3001,999999,"primary, primary_link, secondary, secondary_link, tertiary, tertiary_link, trunk, trunk_link",3
-30,30,No,0,999,No,,,,,3001,999999,"primary, primary_link, secondary, secondary_link, tertiary, tertiary_link, trunk, trunk_link",3
-0,20,Yes,2,2,No,,,,,0,750,"residential, living_street",1
-25,25,Yes,2,2,No,,,,,0,750,"residential, living_street",1
-30,30,Yes,2,2,No,,,,,0,750,"residential, living_street",2
-0,20,Yes,2,2,No,,,,,751,1500,"residential, living_street, collector",2
-25,25,Yes,2,2,No,,,,,751,1500,"residential, living_street, collector",2
-30,30,Yes,2,2,No,,,,,751,1500,"residential, living_street, collector",2
-0,20,Yes,2,2,No,,,,,1501,3000,"collector, secondary, secondary_link, tertiary, tertiary_link, trunk, trunk_link",2
-25,25,Yes,2,2,No,,,,,1501,3000,"collector, secondary, secondary_link, tertiary, tertiary_link, trunk, trunk_link",3
-30,30,Yes,2,2,No,,,,,1501,3000,"collector, secondary, secondary_link, tertiary, tertiary_link, trunk, trunk_link",3
-0,20,Yes,2,2,No,,,,,3001,999999,"primary, primary_link, secondary, secondary_link, tertiary, tertiary_link, trunk, trunk_link",3
-25,25,Yes,2,2,No,,,,,3001,999999,"primary, primary_link, secondary, secondary_link, tertiary, tertiary_link, trunk, trunk_link",3
-30,30,Yes,2,2,No,,,,,3001,999999,"primary, primary_link, secondary, secondary_link, tertiary, tertiary_link, trunk, trunk_link",3
-0,20,Yes,4,999,No,,,,,0,8000,"primary, primary_link, secondary, secondary_link, tertiary, tertiary_link, trunk, trunk_link",3
-25,25,Yes,4,999,No,,,,,0,8000,"primary, primary_link, secondary, secondary_link, tertiary, tertiary_link, trunk, trunk_link",3
-30,30,Yes,4,999,No,,,,,0,8000,"primary, primary_link, secondary, secondary_link, tertiary, tertiary_link, trunk, trunk_link",3
-0,20,Yes,4,999,No,,,,,8001,999999,"primary, primary_link, secondary, secondary_link, tertiary, tertiary_link, trunk, trunk_link",3
-25,25,Yes,4,999,No,,,,,8001,999999,"primary, primary_link, secondary, secondary_link, tertiary, tertiary_link, trunk, trunk_link",3
-30,30,Yes,4,999,No,,,,,8001,999999,"primary, primary_link, secondary, secondary_link, tertiary, tertiary_link, trunk, trunk_link",4
-0,20,Yes,3,3,No,,,,,0,999999,"primary, primary_link, secondary, secondary_link, tertiary, tertiary_link, trunk, trunk_link",3
-25,25,Yes,3,3,No,,,,,0,999999,"primary, primary_link, secondary, secondary_link, tertiary, tertiary_link, trunk, trunk_link",3
-30,30,Yes,3,3,No,,,,,0,999999,"primary, primary_link, secondary, secondary_link, tertiary, tertiary_link, trunk, trunk_link",4
-35,35,No,0,999,No,,,,,0,750,"residential, living_street",2
-40,40,No,0,999,No,,,,,0,750,"residential, living_street",3
-45,999,No,0,999,No,,,,,0,750,"residential, living_street",3
-35,35,No,0,999,No,,,,,751,1500,"residential, living_street, collector",3
-40,40,No,0,999,No,,,,,751,1500,"residential, living_street, collector",3
-45,999,No,0,999,No,,,,,751,1500,"residential, living_street, collector",4
-35,35,No,0,999,No,,,,,1501,3000,"collector, secondary, secondary_link, tertiary, tertiary_link, trunk, trunk_link",3
-40,40,No,0,999,No,,,,,1501,3000,"collector, secondary, secondary_link, tertiary, tertiary_link, trunk, trunk_link",4
-45,999,No,0,999,No,,,,,1501,3000,"collector, secondary, secondary_link, tertiary, tertiary_link, trunk, trunk_link",4
-35,35,No,0,999,No,,,,,3001,999999,"primary, primary_link, secondary, secondary_link, tertiary, tertiary_link, trunk, trunk_link",3
-40,40,No,0,999,No,,,,,3001,999999,"primary, primary_link, secondary, secondary_link, tertiary, tertiary_link, trunk, trunk_link",4
-45,999,No,0,999,No,,,,,3001,999999,"primary, primary_link, secondary, secondary_link, tertiary, tertiary_link, trunk, trunk_link",4
-35,35,Yes,2,2,No,,,,,0,750,"residential, living_street",2
-40,40,Yes,2,2,No,,,,,0,750,"residential, living_street",3
-45,999,Yes,2,2,No,,,,,0,750,"residential, living_street",3
-35,35,Yes,2,2,No,,,,,751,1500,"residential, living_street, collector",3
-40,40,Yes,2,2,No,,,,,751,1500,"residential, living_street, collector",3
-45,999,Yes,2,2,No,,,,,751,1500,"residential, living_street, collector",4
-35,35,Yes,2,2,No,,,,,1501,3000,"collector, secondary, secondary_link, tertiary, tertiary_link, trunk, trunk_link",3
-40,40,Yes,2,2,No,,,,,1501,3000,"collector, secondary, secondary_link, tertiary, tertiary_link, trunk, trunk_link",4
-45,999,Yes,2,2,No,,,,,1501,3000,"collector, secondary, secondary_link, tertiary, tertiary_link, trunk, trunk_link",4
-35,35,Yes,2,2,No,,,,,3001,999999,"primary, primary_link, secondary, secondary_link, tertiary, tertiary_link, trunk, trunk_link",3
-40,40,Yes,2,2,No,,,,,3001,999999,"primary, primary_link, secondary, secondary_link, tertiary, tertiary_link, trunk, trunk_link",4
-45,999,Yes,2,2,No,,,,,3001,999999,"primary, primary_link, secondary, secondary_link, tertiary, tertiary_link, trunk, trunk_link",4
-35,35,Yes,4,999,No,,,,,0,8000,"primary, primary_link, secondary, secondary_link, tertiary, tertiary_link, trunk, trunk_link",3
-40,40,Yes,4,999,No,,,,,0,8000,"primary, primary_link, secondary, secondary_link, tertiary, tertiary_link, trunk, trunk_link",4
-45,999,Yes,4,999,No,,,,,0,8000,"primary, primary_link, secondary, secondary_link, tertiary, tertiary_link, trunk, trunk_link",4
-35,35,Yes,4,999,No,,,,,8001,999999,"primary, primary_link, secondary, secondary_link, tertiary, tertiary_link, trunk, trunk_link",4
-40,40,Yes,4,999,No,,,,,8001,999999,"primary, primary_link, secondary, secondary_link, tertiary, tertiary_link, trunk, trunk_link",4
-45,999,Yes,4,999,No,,,,,8001,999999,"primary, primary_link, secondary, secondary_link, tertiary, tertiary_link, trunk, trunk_link",4
-35,35,Yes,3,3,No,,,,,0,999999,"primary, primary_link, secondary, secondary_link, tertiary, tertiary_link, trunk, trunk_link",4
-40,40,Yes,3,3,No,,,,,0,999999,"primary, primary_link, secondary, secondary_link, tertiary, tertiary_link, trunk, trunk_link",4
-45,999,Yes,3,3,No,,,,,0,999999,"primary, primary_link, secondary, secondary_link, tertiary, tertiary_link, trunk, trunk_link",4
+lower_speed,upper_speed,centerline,lower_lanes,upper_lanes,bike_lane,lower_bl_width,upper_bl_width,parking,freq_bl_blockage,lower_adt,upper_adt,func_class,blts_score
+0,25,Yes,1,2,Yes,15,999,Yes,,,,,1
+0,25,Yes,1,2,Yes,14,14.5,Yes,,,,,2
+0,25,Yes,1,2,Yes,0,13,Yes,,,,,3
+0,25,Yes,3,999,Yes,15,999,Yes,,,,,2
+0,25,Yes,3,999,Yes,0,14.5,Yes,,,,,3
+30,30,Yes,1,2,Yes,15,999,Yes,,,,,1
+30,30,Yes,1,2,Yes,14,14.5,Yes,,,,,2
+30,30,Yes,1,2,Yes,0,13,Yes,,,,,3
+30,30,Yes,3,999,Yes,15,999,Yes,,,,,2
+30,30,Yes,3,999,Yes,0,14.5,Yes,,,,,3
+35,35,Yes,1,2,Yes,15,999,Yes,,,,,2
+35,35,Yes,1,2,Yes,14,14.5,Yes,,,,,3
+35,35,Yes,1,2,Yes,0,13,Yes,,,,,3
+35,35,Yes,3,999,Yes,15,999,Yes,,,,,3
+35,35,Yes,3,999,Yes,0,14.5,Yes,,,,,3
+40,999,Yes,1,2,Yes,15,999,Yes,,,,,2
+40,999,Yes,1,2,Yes,14,14.5,Yes,,,,,4
+40,999,Yes,1,2,Yes,0,13,Yes,,,,,4
+40,999,Yes,3,999,Yes,15,999,Yes,,,,,3
+40,999,Yes,3,999,Yes,0,14.5,Yes,,,,,4
+0,30,Yes,1,2,Yes,7,999,No,No,,,,1
+0,30,Yes,1,2,Yes,5.5,6.5,No,No,,,,1
+0,30,Yes,1,2,Yes,0,5,No,No,,,,2
+0,30,Yes,1,2,Yes,0,999,No,Yes,,,,3
+0,30,Yes,3,999,Yes,7,999,No,No,,,,1
+0,30,Yes,3,999,Yes,0,6.5,No,No,,,,3
+35,35,Yes,1,2,Yes,7,999,No,No,,,,2
+35,35,Yes,1,2,Yes,5.5,6.5,No,No,,,,3
+35,35,Yes,1,2,Yes,0,5,No,No,,,,3
+35,35,Yes,1,2,Yes,0,999,No,Yes,,,,3
+35,35,Yes,3,999,Yes,7,999,No,No,,,,2
+35,35,Yes,3,999,Yes,0,6.5,No,No,,,,4
+40,999,Yes,1,2,Yes,7,999,No,No,,,,3
+40,999,Yes,1,2,Yes,5.5,6.5,No,No,,,,4
+40,999,Yes,1,2,Yes,0,5,No,No,,,,4
+40,999,Yes,1,2,Yes,0,999,No,Yes,,,,4
+40,999,Yes,3,999,Yes,7,999,No,No,,,,3
+40,999,Yes,3,999,Yes,0,6.5,No,No,,,,4
+0,20,No,0,999,No,,,,,0,750,"residential, living_street, track",1
+25,25,No,0,999,No,,,,,0,750,"residential, living_street, track",1
+30,30,No,0,999,No,,,,,0,750,"residential, living_street, track",2
+0,20,No,0,999,No,,,,,751,1500,"residential, living_street, collector, track",1
+25,25,No,0,999,No,,,,,751,1500,"residential, living_street, collector, track",1
+30,30,No,0,999,No,,,,,751,1500,"residential, living_street, collector, track",2
+0,20,No,0,999,No,,,,,1501,3000,"collector, secondary, secondary_link, tertiary, tertiary_link, trunk, trunk_link, unclassified",2
+25,25,No,0,999,No,,,,,1501,3000,"collector, secondary, secondary_link, tertiary, tertiary_link, trunk, trunk_link, unclassified",2
+30,30,No,0,999,No,,,,,1501,3000,"collector, secondary, secondary_link, tertiary, tertiary_link, trunk, trunk_link, unclassified",2
+0,20,No,0,999,No,,,,,3001,999999,"primary, primary_link, secondary, secondary_link, tertiary, tertiary_link, trunk, trunk_link, unclassified",2
+25,25,No,0,999,No,,,,,3001,999999,"primary, primary_link, secondary, secondary_link, tertiary, tertiary_link, trunk, trunk_link, unclassified",3
+30,30,No,0,999,No,,,,,3001,999999,"primary, primary_link, secondary, secondary_link, tertiary, tertiary_link, trunk, trunk_link, unclassified",3
+0,20,Yes,2,2,No,,,,,0,750,"residential, living_street, track",1
+25,25,Yes,2,2,No,,,,,0,750,"residential, living_street, track",1
+0,20,Yes,2,2,No,,,,,751,1500,"residential, living_street, collector, track",2
+25,25,Yes,2,2,No,,,,,751,1500,"residential, living_street, collector, track",2
+30,30,Yes,2,2,No,,,,,751,1500,"residential, living_street, collector, track",2
+0,20,Yes,2,2,No,,,,,1501,3000,"collector, secondary, secondary_link, tertiary, tertiary_link, trunk, trunk_link, unclassified",2
+25,25,Yes,2,2,No,,,,,1501,3000,"collector, secondary, secondary_link, tertiary, tertiary_link, trunk, trunk_link, unclassified",3
+30,30,Yes,2,2,No,,,,,1501,3000,"collector, secondary, secondary_link, tertiary, tertiary_link, trunk, trunk_link, unclassified",3
+0,20,Yes,2,2,No,,,,,3001,999999,"primary, primary_link, secondary, secondary_link, tertiary, tertiary_link, trunk, trunk_link, unclassified",3
+25,25,Yes,2,2,No,,,,,3001,999999,"primary, primary_link, secondary, secondary_link, tertiary, tertiary_link, trunk, trunk_link, unclassified",3
+30,30,Yes,2,2,No,,,,,3001,999999,"primary, primary_link, secondary, secondary_link, tertiary, tertiary_link, trunk, trunk_link, unclassified",3
+0,20,Yes,4,999,No,,,,,0,8000,"primary, primary_link, secondary, secondary_link, tertiary, tertiary_link, trunk, trunk_link, unclassified",3
+25,25,Yes,4,999,No,,,,,0,8000,"primary, primary_link, secondary, secondary_link, tertiary, tertiary_link, trunk, trunk_link, unclassified",3
+30,30,Yes,4,999,No,,,,,0,8000,"primary, primary_link, secondary, secondary_link, tertiary, tertiary_link, trunk, trunk_link, unclassified",3
+0,20,Yes,4,999,No,,,,,8001,999999,"primary, primary_link, secondary, secondary_link, tertiary, tertiary_link, trunk, trunk_link, unclassified",3
+25,25,Yes,4,999,No,,,,,8001,999999,"primary, primary_link, secondary, secondary_link, tertiary, tertiary_link, trunk, trunk_link, unclassified",3
+30,30,Yes,4,999,No,,,,,8001,999999,"primary, primary_link, secondary, secondary_link, tertiary, tertiary_link, trunk, trunk_link, unclassified",4
+0,20,Yes,3,3,No,,,,,0,999999,"primary, primary_link, secondary, secondary_link, tertiary, tertiary_link, trunk, trunk_link, unclassified",3
+25,25,Yes,3,3,No,,,,,0,999999,"primary, primary_link, secondary, secondary_link, tertiary, tertiary_link, trunk, trunk_link, unclassified",3
+30,30,Yes,3,3,No,,,,,0,999999,"primary, primary_link, secondary, secondary_link, tertiary, tertiary_link, trunk, trunk_link, unclassified",4
+35,35,No,0,999,No,,,,,0,750,"residential, living_street, track",2
+40,40,No,0,999,No,,,,,0,750,"residential, living_street, track",3
+45,999,No,0,999,No,,,,,0,750,"residential, living_street, track",3
+35,35,No,0,999,No,,,,,751,1500,"residential, living_street, collector, track",3
+40,40,No,0,999,No,,,,,751,1500,"residential, living_street, collector, track",3
+45,999,No,0,999,No,,,,,751,1500,"residential, living_street, collector, track",4
+35,35,No,0,999,No,,,,,1501,3000,"collector, secondary, secondary_link, tertiary, tertiary_link, trunk, trunk_link, unclassified",3
+40,40,No,0,999,No,,,,,1501,3000,"collector, secondary, secondary_link, tertiary, tertiary_link, trunk, trunk_link, unclassified",4
+45,999,No,0,999,No,,,,,1501,3000,"collector, secondary, secondary_link, tertiary, tertiary_link, trunk, trunk_link, unclassified",4
+35,35,No,0,999,No,,,,,3001,999999,"primary, primary_link, secondary, secondary_link, tertiary, tertiary_link, trunk, trunk_link, unclassified",3
+40,40,No,0,999,No,,,,,3001,999999,"primary, primary_link, secondary, secondary_link, tertiary, tertiary_link, trunk, trunk_link, unclassified",4
+45,999,No,0,999,No,,,,,3001,999999,"primary, primary_link, secondary, secondary_link, tertiary, tertiary_link, trunk, trunk_link, unclassified",4
+35,35,Yes,2,2,No,,,,,0,750,"residential, living_street, track",2
+40,40,Yes,2,2,No,,,,,0,750,"residential, living_street, track",3
+45,999,Yes,2,2,No,,,,,0,750,"residential, living_street, track",3
+35,35,Yes,2,2,No,,,,,751,1500,"residential, living_street, collector, track",3
+40,40,Yes,2,2,No,,,,,751,1500,"residential, living_street, collector, track",3
+45,999,Yes,2,2,No,,,,,751,1500,"residential, living_street, collector, track",4
+35,35,Yes,2,2,No,,,,,1501,3000,"collector, secondary, secondary_link, tertiary, tertiary_link, trunk, trunk_link, unclassified",3
+40,40,Yes,2,2,No,,,,,1501,3000,"collector, secondary, secondary_link, tertiary, tertiary_link, trunk, trunk_link, unclassified",4
+45,999,Yes,2,2,No,,,,,1501,3000,"collector, secondary, secondary_link, tertiary, tertiary_link, trunk, trunk_link, unclassified",4
+35,35,Yes,2,2,No,,,,,3001,999999,"primary, primary_link, secondary, secondary_link, tertiary, tertiary_link, trunk, trunk_link, unclassified",3
+40,40,Yes,2,2,No,,,,,3001,999999,"primary, primary_link, secondary, secondary_link, tertiary, tertiary_link, trunk, trunk_link, unclassified",4
+45,999,Yes,2,2,No,,,,,3001,999999,"primary, primary_link, secondary, secondary_link, tertiary, tertiary_link, trunk, trunk_link, unclassified",4
+35,35,Yes,4,999,No,,,,,0,8000,"primary, primary_link, secondary, secondary_link, tertiary, tertiary_link, trunk, trunk_link, unclassified",3
+40,40,Yes,4,999,No,,,,,0,8000,"primary, primary_link, secondary, secondary_link, tertiary, tertiary_link, trunk, trunk_link, unclassified",4
+45,999,Yes,4,999,No,,,,,0,8000,"primary, primary_link, secondary, secondary_link, tertiary, tertiary_link, trunk, trunk_link, unclassified",4
+35,35,Yes,4,999,No,,,,,8001,999999,"primary, primary_link, secondary, secondary_link, tertiary, tertiary_link, trunk, trunk_link, unclassified",4
+40,40,Yes,4,999,No,,,,,8001,999999,"primary, primary_link, secondary, secondary_link, tertiary, tertiary_link, trunk, trunk_link, unclassified",4
+45,999,Yes,4,999,No,,,,,8001,999999,"primary, primary_link, secondary, secondary_link, tertiary, tertiary_link, trunk, trunk_link, unclassified",4
+35,35,Yes,3,3,No,,,,,0,999999,"primary, primary_link, secondary, secondary_link, tertiary, tertiary_link, trunk, trunk_link, unclassified",4
+40,40,Yes,3,3,No,,,,,0,999999,"primary, primary_link, secondary, secondary_link, tertiary, tertiary_link, trunk, trunk_link, unclassified",4
+45,999,Yes,3,3,No,,,,,0,999999,"primary, primary_link, secondary, secondary_link, tertiary, tertiary_link, trunk, trunk_link, unclassified",4

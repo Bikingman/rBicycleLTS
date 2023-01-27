@@ -8,7 +8,7 @@ segment:
       assumptions:
         - where: "df$fclass %in% c('motorway','motorway_link')"
           val: 'Yes'
-        - else: 
+        - else:
           val: 'No'
     lanes:
       name: 'lanes'
@@ -21,11 +21,10 @@ segment:
           val: 2
         - where: "df$fclass %in% c('residential','living_street')"
           val: 2
-        - where: "df$fclass == 'cycleway'"
+        - where: "df$fclass %in% c('cycleway', 'track', 'service')"
           val: 1
-        - else: 
+        - else:
           val: 2
-
     aadt:
       name: 'aadt'
       assumptions:
@@ -33,24 +32,24 @@ segment:
           val: 16000
         - where: "df$fclass %in% c('primary','primary_link','secondary','secondary_link')"
           val: 16000
-        - where: "df$fclass %in% c('tertiary', 'tertiary_link', 'collector')"
+        - where: "df$fclass %in% c('tertiary', 'tertiary_link', 'collector', 'service')"
           val: 8000
         - where: "df$fclass %in% c('residential')"
           val: 500
-        - where: "df$fclass == 'living_street'"
+        - where: "df$fclass %in% c('living_street', 'track')"
           val: 100
         - where: "df$fclass == 'cycleway'"
           val: 0
-        - else: 
+        - else:
           val: 8000
     centerline:
       name: "centerline"
       assumptions:
-        - where: "df$fclass %in% c('unclassified','residential','living_street')"
+        - where: "df$fclass %in% c('unclassified','residential','living_street', 'track', 'service')"
           val: 'No'
         - where: "df$lanes == 1"
           val: 'No'
-        - where: "df$fclass == 'cycleway'"
+        - where: "df$fclass %in% c('cycleway')"
           val: 'No'
         - else:
           val: 'Yes'
@@ -61,18 +60,18 @@ segment:
           val: 40
         - where: "df$fclass %in% c('tertiary', 'tertiary_link')"
           val: 30
-        - where: "df$fclass %in% c('unclassified','residential')"
+        - where: "df$fclass %in% c('unclassified','residential', 'track', 'service')"
           val: 25
         - where: "df$fclass == 'living_street'"
           val: 20
-        - where: "df$fclass == 'cycleway'"
+        - where: "df$fclass %in% c('cycleway')"
           val: 10
-        - else: 
+        - else:
           val: 30
     parking:
       name: "parking"
       assumptions:
-        - else: 
+        - else:
           val: 'Yes'
     low_parking:
       name: "low_parking"
@@ -81,22 +80,24 @@ segment:
           val: 'No'
         - where: "df$fclass %in% c('tertiary', 'tertiary_link')"
           val: 'No'
-        - else: 
+        - else:
           val: 'No'
     parking_width:
       name: "p_width"
       assumptions:
-        - else: 
+        - else:
           val: 8
     width:
       name: 'width'
       assumptions:
-        - else: 
+        - else:
           val: 50.
     bike_lane_width:
       name: 'bike_l_width'
       assumptions:
         - where: "df$fclass == 'cycleway'"
+          val: 6
+        - where: "df$min_bk_inf %in% c('Bike Lane', 'Protected Bike Lane')"
           val: 5
         - else:
           val: 0
