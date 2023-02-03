@@ -1,44 +1,16 @@
-# Hello, world!
-#
-# This is an example function named "hello"
-# which prints "Hello, world!".
-#
-# You can learn more about package authoring with RStudio at:
-#
-#   http://r-pkgs.had.co.nz/
-#
-# Some useful keyboard shortcuts for package authoring:
-#
-#   Install Package:           "Cmd + Shift + B"
-#   Check Package:             "Cmd + Shift + E"
-#   Test Package:              "Cmd + Shift + T"
+# Author: Daniel Patterson
+# Company: Cambridge Systematics
+# Date: 2023.
+# Description: Collection of functions to score bicycle level of traffic stress on road segments. 
+# Source of BLTS Scores: Analysis Procedures Manual Version 2, Chapter 14
+# https://www.oregon.gov/odot/planning/pages/apm.aspx
+# Assumptions based on information available from People for Bikes, Bicycle Network Analysis 
+# https://github.com/tooledesign/pybna/blob/master/pybna/config.yaml
 
 library(dplyr)
 library(sf)
 library(yaml)
 library(fuzzyjoin)
-
-# tests if column exists 
-column_exists <- function(table, column) {
-  if (names(table) %in% column) {
-    return(TRUE)
-  } else {
-    return(FALSE)
-  }
-}
-
-# extracts key values from yaml
-create_key_value <- function(keys, values) {
-  if (length(keys) == length(values)) {
-    dict <- list()
-    for (index in length(keys)) {
-      dict[[keys[index]]] == values[index]
-    }
-    return(dict)
-  } else {
-    return(stop("key, value arguments are not the same length"))
-  }
-}
 
 # gets class of each dataset from yaml
 get_class <- function(column){
@@ -58,7 +30,6 @@ add_default_columns <- function(df, config) {
     if (!any(names(df) %in% name)) {
       df[[name]] <- NA
     }
-
   }
   return(df)
 }
@@ -89,10 +60,7 @@ define_assumptions <- function(df, config) {
         val <- config$segment[[i]]$assumptions[j][[1]]$val
         if (!(j == length(config$segment[[i]]$assumptions))) {
           condition <- config$segment[[i]]$assumptions[j][[1]]$where
-          df[[name]] <- ifelse(is.na(df[[name]]) & 
-                               eval(parse(text = condition)), 
-                               val, 
-                               df[[name]])
+          df[[name]] <- ifelse(is.na(df[[name]]) & eval(parse(text = condition)),  val, df[[name]])
         } else {
           df[[name]] <- ifelse(is.na(df[[name]]), val, df[[name]])
         }}}}
@@ -104,9 +72,12 @@ convert_title <- function(df){
     name <- names(df)[i]
     if (class(df[[name]])[1] == "character") {
       yeses <- c("yes", "YES", "YEs", "YeS", "yES")
-      df[[name]] <- ifelse(df[[name]] %in% yeses, "Yes", df[[name]])
+      df[[name]] <- ifelse(df[[name]] %in% yeses, 
+                            "Yes", 
+                            df[[name]])
       df[[name]] <- ifelse(df[[name]] %in% c("no", "nO", "NO"),
-                           "No", df[[name]])
+                           "No", 
+                           df[[name]])
     }
   }
   return(df)
@@ -121,16 +92,7 @@ fix_speed <- function(roads, maxspeedlimit_col) {
   return(roads)
 }
 
-perform_lanes_check <- function(df, lanes, centerline){
-  if( any(as.integer(df[[lanes]]) < 2 & df[[centerline]] == 'Yes')){
-    print('There are segments with ceterlines and only one lane of traffic')
-  } else {
-    print('Checked for: Centerline Presents and Only One Lane of Traffic')
-    print('No Issues Found')
-  }
-}
-
-score_blts_or <- function(df, config, scores ) {
+score_blts <- function(df, config, scores ) {
 
   df <- add_default_columns(df, config)
   df <- assign_classes(df, config)
