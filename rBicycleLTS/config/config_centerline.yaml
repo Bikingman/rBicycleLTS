@@ -32,8 +32,10 @@ segment:
           val: 16000
         - where: "df$fclass %in% c('primary','primary_link','secondary','secondary_link')"
           val: 16000
-        - where: "df$fclass %in% c('tertiary', 'tertiary_link', 'collector', 'service')"
+        - where: "df$fclass %in% c('tertiary', 'tertiary_link', 'collector')"
           val: 8000
+        - where: "df$fclass %in% c('service')"
+          val: 1500
         - where: "df$fclass %in% c('residential')"
           val: 500
         - where: "df$fclass %in% c('living_street', 'track')"
